@@ -1,22 +1,21 @@
 const express = require('express');
 const { NodeVM } = require('vm2');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../public'))); // ../publicを配信
 
 app.post('/run', (req, res) => {
   const code = req.body.code;
-  if (typeof code !== 'string') {
-    return res.status(400).json({ error: 'No code provided' });
-  }
+  if (!code) return res.status(400).json({ error: 'No code provided' });
 
   const vm = new NodeVM({
     console: 'redirect',
     timeout: 3000,
     sandbox: {}
   });
-
-  let logs = [];
+  const logs = [];
   vm.on('console.log', msg => logs.push(msg));
 
   try {
