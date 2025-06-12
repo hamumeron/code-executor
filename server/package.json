@@ -1,0 +1,13 @@
+{
+  "name": "cloud-runner",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "npx puppeteer install"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^19.7.5",
+    "uuid": "^9.0.0"
+  }
+}
