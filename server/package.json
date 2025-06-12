@@ -1,13 +1,12 @@
 {
-  "name": "cloud-runner",
+  "name": "cloud-code-server",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "npx puppeteer install"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "puppeteer": "^19.7.5",
-    "uuid": "^9.0.0"
+    "puppeteer": "^21.3.8"
   }
 }
