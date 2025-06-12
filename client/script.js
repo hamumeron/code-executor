@@ -7,7 +7,7 @@ require(["vs/editor/editor.main"], () => {
 });
 document.getElementById("runBtn").onclick = async () => {
   const code = editor.getValue();
-  const res = await fetch("https://your-app.onrender.com/run", {
+  const res = await fetch("https://code-executor-vxce.onrender.com/run", {
     method: "POST",
     headers: { "Content-Type":"application/json" },
     body: JSON.stringify({ code })
